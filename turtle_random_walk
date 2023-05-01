@@ -1,18 +1,26 @@
-from turtle import Turtle, Screen
+import turtle as t 
 import random
-Timmy=Turtle()
+Timmy=t.Turtle()
 Timmy.shape("turtle")
 Timmy.color("black")
+t.colormode(255)
 
 Timmy.pensize(10)
-color=['chocolate','light pink','dark red','orange red','gold','light salmon','dark salmon','rosy brown','pale violet red']
+def random_color_selector():
+  r=random.randint(0,255)
+  g=random.randint(0,255)
+  b=random.randint(0,255)
+  random_color=(r,g,b)
+  return random_color
+  
 directions=[0,90,180,270]
 
 for i in range(200):
   Timmy.forward(30)
-  Timmy.pencolor(random.choice(color))
+  Timmy.pencolor(random_color_selector())
   Timmy.setheading(random.choice(directions))
 
 
-screen=Screen()
+screen=t.Screen()
 screen.exitonclick()
+  
