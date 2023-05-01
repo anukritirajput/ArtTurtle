@@ -1,0 +1,20 @@
+import turtle as t 
+import random
+Timmy=t.Turtle()
+Timmy.shape("turtle")
+Timmy.color("black")
+t.colormode(255)
+
+Timmy.pensize(5)
+def random_color_selector():
+  r=random.randint(100,200)
+  g=random.randint(100,200)
+  b=random.randint(100,200)
+  random_color=(r,g,b)
+  return random_color
+  
+
+for i in range(0,36):
+  Timmy.pencolor(random_color_selector())
+  Timmy.circle(100)
+  Timmy.left(10)
